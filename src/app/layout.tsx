@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Merriweather } from "next/font/google";
+import { Geist, Geist_Mono, Merriweather, Big_Shoulders_Stencil_Text } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,6 +20,14 @@ const merriweather = Merriweather({
   preload: true,
 });
 
+const bigShoulders = Big_Shoulders_Stencil_Text({
+  variable: "--font-family-brand",
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  display: "swap",
+  preload: true,
+});
+
 export const metadata: Metadata = {
   title: "Chiến thắng Điện Biên Phủ",
   description: "",
@@ -34,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} ${bigShoulders.variable} antialiased`}
       >
         {children}
       </body>
